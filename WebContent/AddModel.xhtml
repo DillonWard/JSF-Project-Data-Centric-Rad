@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Model Table - Add</title>
+
+	<f:metadata>
+		<f:event listener="#{modelController.loadModel()}"
+			type="preRenderView" />
+	</f:metadata>
+</h:head>
+
+<h:body>
+	<h:form>
+      Manufacturer Code: <h:inputText value="#{model.manuCode}" id="id"
+       required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Model Code" />
+		<br />
+		<br />
+      Model Code: <h:inputText value="#{model.modelCode}"
+       required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Model Code" />
+		<br />
+		<br />
+		 
+		 Model Name: <h:inputText value="#{model.modelName}"
+		  required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Model Name" />
+		<br />
+		<br />
+		Model Description: <h:inputText value="#{model.modelDesc}"
+		 required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Model Description" />
+		<br />
+		<br />
+		<h:commandButton value="Add Row" action="#{modelController.addModel(model)}" />
+		<br />
+		<br />
+		 <a href="Manufacturers.xhtml">Manufacturers</a><br />
+		 <a href="Model.xhtml">Models</a><br />
+		 <a href="Vehicle.xhtml">Vehicles</a><br />
+			
+	</h:form>
+</h:body>
+</html>

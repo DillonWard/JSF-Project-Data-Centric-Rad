@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Vehicle Table - Add</title>
+
+	<f:metadata>
+		<f:event listener="#{vehicleController.loadVehicle()}"
+			type="preRenderView" />
+	</f:metadata>
+</h:head>
+
+<h:body>
+	<h:form>
+      Vehicle Registration: <h:inputText value="#{vehicle.reg}" id="id"
+       required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Registration Number" />
+		<br />
+		<br />
+      Manufacturer Code: <h:inputText value="#{vehicle.manuCode}"
+       required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Manufacturer Code" />
+		<br />
+		<br />
+		 Model Code: <h:inputText value="#{vehicle.modelCode}"
+		  required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Model Code" />
+		<br />
+		<br />
+		Mileage: <h:inputText value="#{vehicle.mileage}"
+		 required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Mileage" />
+		<br />
+		<br />
+		Price: <h:inputText value="#{vehicle.price}"
+		 required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Car Price" />
+		<br />
+		<br />
+		Colour: <h:inputText value="#{vehicle.colour}"
+		 required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Car Colour" />
+		<br />
+		<br />
+		Fuel Type: <h:inputText value="#{vehicle.fuel}"
+		 required="true" requiredMessage="Field must be entered"
+			p:placeholder="Enter Fuel Type" />
+		<br />
+		<br />
+		<h:commandButton value="Add row" action="#{vehicleController.addVehicle(vehicle)}" />
+		<br />
+		<br />
+		 <a href="Manufacturers.xhtml">Manufacturers</a><br />
+		 <a href="Model.xhtml">Models</a><br />
+		 <a href="Vehicle.xhtml">Vehicles</a><br />
+	</h:form>
+</h:body>
+</html>

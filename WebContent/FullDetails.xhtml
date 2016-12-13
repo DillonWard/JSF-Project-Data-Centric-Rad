@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Full Details</title>
+</h:head>
+<h:body>
+<a href="index.xhtml">Home</a><br/><br/>
+		
+	<strong>Registration</strong>: #{fullDetailsController.fullDetails.reg}<br/>
+	<strong>Manufacturer Code:</strong> #{fullDetailsController.fullDetails.manuCode}<br/>
+	<strong>Manufacturer Name:</strong> #{fullDetailsController.fullDetails.manuName}<br/>
+	<strong>Manufacturer Details:</strong> #{fullDetailsController.fullDetails.manuDetails}<br/>
+	<strong>Model Code:</strong> #{fullDetailsController.fullDetails.modelCode}<br/>
+	<strong>Model Name:</strong> #{fullDetailsController.fullDetails.modelName}<br/>
+	<strong>Model Description:</strong> #{fullDetailsController.fullDetails.modelDesc}<br/>
+	<strong>Mileage:</strong> #{fullDetailsController.fullDetails.mileage}<br/>
+	<strong>Price:</strong> #{fullDetailsController.fullDetails.price}<br/>
+	<strong>Colour:</strong> #{fullDetailsController.fullDetails.colour}<br/>
+	<strong>Fuel:</strong> #{fullDetailsController.fullDetails.fuel}<br/>
+	<br/><br/>
+	
+	<a href="Manufacturers.xhtml">Manufacturers</a><br />
+	<a href="Model.xhtml">Models</a><br />
+	<a href="Vehicle.xhtml">Vehicles</a><br/>
+</h:body>
+</html>

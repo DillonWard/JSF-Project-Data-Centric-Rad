@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Vehicle Table</title>
+		<f:metadata>
+		<h:outputStylesheet library="css" name="stylesheet.css"  /> 
+		<f:event listener="#{vehicleController.loadVehicle()}"
+			type="preRenderView" />
+		</f:metadata>
+</h:head>
+
+<h:body>
+<a href="index.xhtml">Home</a><br/>
+<a href="AddVehicle.xhtml">Add Vehicle</a><br />
+	<h:dataTable styleClass="employeeTable"
+   headerClass="employeeTableHeader"
+   rowClasses="employeeTableOddRow,employeeTableEvenRow" value="#{vehicleController.vehicle}" var="v" border="1">
+		<h:column>
+			<f:facet name="header">Vehicle<br/>Registration</f:facet>
+			#{v.reg}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Manufacturer<br/>Code</f:facet>
+			#{v.manuCode}
+		</h:column>
+		<h:column>	
+			<f:facet name="header">Model Code</f:facet>
+			#{v.modelCode}
+		</h:column>
+		<h:column>	
+			<f:facet name="header">Mileage</f:facet>
+			#{v.mileage}
+		</h:column>
+		<h:column>	
+			<f:facet name="header">Colour</f:facet>
+			#{v.colour}
+		</h:column>
+		<h:column>	
+			<f:facet name="header">Fuel Type</f:facet>
+			#{v.fuel}
+		</h:column>
+		<h:column>	
+		
+				<f:facet name="Header">Action</f:facet>
+				<h:form>
+			<h:commandLink value="All Details" action="#{fullDetailsController.fullDetailsClick()}">
+			  <f:param name="reg" value="#{v.reg}" />
+			  </h:commandLink>
+			  </h:form>
+			</h:column>																			
+		</h:dataTable>
+	<a href="Manufacturers.xhtml">Manufacturers</a><br />
+	 <a href="Model.xhtml">Models</a><br />
+	 <a href="Vehicle.xhtml">Vehicles</a><br />
+</h:body>
+</html>

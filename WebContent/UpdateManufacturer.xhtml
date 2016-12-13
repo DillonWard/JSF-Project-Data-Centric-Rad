@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Manufacturer Table - Update</title>
+
+	<f:metadata>
+		<f:event listener="#{manufacturerController.loadManufacturers()}" type="preRenderView" />
+	</f:metadata>
+</h:head>
+
+<h:body>
+	<h:form>
+      Vehicle Registration: <td><h:inputText value="#{vehiclefacturerController.registration}" id="reg" disabled = "true"/></td>
+		<br />
+		<br />
+      Manufacturer Name: <td><h:inputText value="#{manufacturerController.updateName}" id = "manuName"
+			 requiredMessage = "Entry must be filled - Manufacturer Name" /></td>
+			<h:message for = "manuName" />
+		<br />
+		<br />
+		 Manufacturer Details:<td> <h:inputText value="#{manufacturerController.updateDetails}" id = "manuDetails"
+			requiredMessage = "Entry must be filled - Manufacturer Details"/></td>
+			<h:message for="manuDetails"/>
+		<br />
+		<br />
+		<h:commandButton value="Update Row" action="#{manufacturerController.updateManufacturer(manufacturer)}" />
+		<br />
+		<br />
+		 <a href="Manufacturers.xhtml">Manufacturers</a><br />
+		 <a href="Model.xhtml">Models</a><br />
+		 <a href="Vehicle.xhtml">Vehicles</a><br />
+	</h:form>
+</h:body>
+</html>
